@@ -1,0 +1,1487 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BasicSDKLib</name>
+    </assembly>
+    <members>
+        <member name="T:TesseractBasic.ConfigBase">
+            <summary>
+            Base class for device configuration data, only accessible by classes inside the  namespace
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ConfigBase.Create">
+            <summary>
+            Create the specified configClass based on the device name
+            </summary>
+            <returns>The static ConfigClass instance</returns>
+        </member>
+        <member name="M:TesseractBasic.ConfigBase.UpdateConfigData(TesseractBasic.NativeInterface)">
+            <summary>
+            Updates the config data based on selected device type.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ConfigBase.updateConfigData(TesseractBasic.NativeInterface)">
+            <summary>
+            Subclass function for updating config data based on the device.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ConfigBase.saveIPDData(System.Single)">
+            <summary>
+            Saves the IPD data.
+            </summary>
+            <param name="value">Value of the IPD to save</param>
+        </member>
+        <member name="M:TesseractBasic.ConfigBase.LoadIPDFromFile">
+            <summary>
+            Loads the IPD data from file.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ConfigBase.GetType(System.String)">
+            <summary>
+            Utility function to get the class type from class name.
+            </summary>
+            <returns>The type.</returns>
+            <param name="typeName">Type name.</param>
+        </member>
+        <member name="T:TesseractBasic.Config_Device">
+            <summary>
+            Config class for editor.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.Config_Editor">
+            <summary>
+            Config class for editor.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.ControllerCallbacks">
+            <summary>
+            Controller callbacks. Most direct access to controller callbacks.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnControllerStateChanged">
+            <summary>
+            Action to get notification for Controller State Changes to <see cref="T:TesseractBasic.CONTROLLER_STATE"/>
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnButtonPressedStart">
+            <summary>
+            Action to get notification for when a <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/> has just been pressed.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnButtonPressEnded">
+            <summary>
+            Action to get notification for when a <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/> is released.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnTrackpadTouchBegin">
+            <summary>
+            Action to get notification for when the touchpad detected a touch.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnTrackpadTouchEnd">
+            <summary>
+            Action to get notification for when the touchpad touch has ended.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnButtonSingleClickUp">
+            <summary>
+            Action to get notification for a single click of a <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>. This is different from 
+            <see cref="T:TesseractBasic.ControllerCallbacks.OnButtonSingleClickConfirm"/> as this is triggered as soon as any button is clicked
+            once, which means it could still be a double click
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnButtonSingleClickConfirm">
+            <summary>
+            Action to get notification for a confirmed single click of a <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnButtonDoubleClick">
+            <summary>
+            Action to get notification for double click of a <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnDoubleClickCancelled">
+             <summary>
+            Action to get notification for when double click was cancelled by long pressing the second click
+             </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnButtonLongPressStart">
+            <summary>
+            Action to get notification for begining of long press of a <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnButtonLongPressEnd">
+            <summary>
+            Action to get notification for release of button after long press of the <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnSwipeVertical">
+            <summary>
+             Action to get notification for when touchpad is swiped vertically.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerCallbacks.OnSwipeHorizontal">
+            <summary>
+            Action to get notification for when touchpad is swipedhorizontally.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.ControllerEditorConnection">
+            <summary>
+            Simulates Controller Connection State
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.ControllerInput">
+            <summary>
+            Class for detecting compound gestures and clicks from the Holoboard Controller
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerInput.TimeToRegisterSingleClick">
+            <summary>
+            Time to register Single click.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ControllerInput.TimeToRegisterLongPress">
+            <summary>
+            The time to register long press.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.EditorControllerInput">
+            <summary>
+            Simulates controller inputs through Keyboard in Editor Mode.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.HBControllerNativeAndroid">
+            <summary>
+            HoloBoard Controller native android interface
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeAndroid.InitiateConnection(System.String)">
+            <summary>
+            Initiates the connection.
+            </summary>
+            <param name="goName">GameOject for the native interface to communicate the data to on Unity side.</param>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeAndroid.updateControllerStates">
+            <summary>
+            This function is called from the native interface to relay low-level controller information to Unity side.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeAndroid.CloseConnection">
+            <summary>
+            This function is called from the native interface to close connection on the native side..
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.HBControllerNativeEditor">
+            <summary>
+            HoloBoard Controller Editor Simulator interface
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeEditor.InitiateConnection(System.String)">
+            <summary>
+            Initiates the connection.
+            </summary>
+            <param name="goName">GameOject for the native interface to communicate the data to on Unity side.</param>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeEditor.updateControllerStates">
+            <summary>
+            This function is called from the native interface to relay low-level controller information to Unity side.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeEditor.CloseConnection">
+            <summary>
+            This function is called from the native interface to close connection on the native side..
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.HBControllerNativeInterface">
+            <summary>
+            HB Controller Native Interface.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeInterface.InitiateConnection(System.String)">
+            <summary>
+            Initiates the connection.
+            </summary>
+            <param name="goName">GameOject for the native interface to communicate the data to on Unity side.</param>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeInterface.updateControllerStates">
+            <summary>
+            This function is called from the native interface to relay low-level controller information to Unity side.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeInterface.CloseConnection">
+            <summary>
+            Closes the connection.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeInterface.ProcessOrientation">
+            <summary>
+            Processes the controller orientation in 3D space
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeInterface.SetStartFromSensorTransformation">
+            <summary>
+            Resets the orientation in sensor space.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeInterface.SetOrientationInSensorSpace(System.Single,UnityEngine.Vector3)">
+            <summary>
+            Sets the orientation in sensor space.
+            </summary>
+            <param name="angle">Angle.</param>
+            <param name="axis">Axis.</param>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeInterface.ProcessTouchpad">
+            <summary>
+            Processes touchpad input
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.HBControllerNativeiOS">
+            <summary>
+            HoloBoard Controller native iOS interface
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeiOS.InitiateConnection(System.String)">
+            <summary>
+            Initiates the connection.
+            </summary>
+            <param name="goName">GameOject for the native interface to communicate the data to on Unity side.</param>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeiOS.updateControllerStates">
+            <summary>
+            This function is called from the native interface to relay low-level controller information to Unity side.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HBControllerNativeiOS.CloseConnection">
+            <summary>
+            This function is called from the native interface to close connection on the native side..
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.HoloboardController">
+            <summary>
+            Holoboard controller class.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.HoloboardController.Instance">
+            <summary>
+            Singleton instance of the class
+            </summary>
+        </member>
+        <member name="P:TesseractBasic.HoloboardController.ControllerState">
+            <summary>
+            Gets the state of the Controller.
+            </summary>
+            <value>The <see cref="T:TesseractBasic.CONTROLLER_STATE"/> of the connection.</value>
+        </member>
+        <member name="P:TesseractBasic.HoloboardController.ControllerButtonActive">
+            <summary>
+            Gets the currently active <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>
+            </summary>
+            <value>The currently active <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>.</value>
+        </member>
+        <member name="P:TesseractBasic.HoloboardController.TouchpadTouching">
+            <summary>
+            Gets a value indicating whether the touchpad is being touched.
+            </summary>
+            <value><c>true</c> if touchpad touching; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TesseractBasic.HoloboardController.TouchpadPosition">
+            <summary>
+            Gets the touchpad position.
+            </summary>
+            <value>The touchpad position.</value>
+        </member>
+        <member name="P:TesseractBasic.HoloboardController.ControllerOrientation">
+            <summary>
+            Gets the controller's current orientation.
+            </summary>
+            <value>The controller orientation in 3D space.</value>
+        </member>
+        <member name="F:TesseractBasic.HoloboardController.ConnectOnAwake">
+            <summary>
+            Whether connection with the controller should be attempted as soon as this GameObject is loaded.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.HoloboardController.mHBControllerNativeInterface">
+            <summary>
+            The native controller interface.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.HoloboardController.lastControllerButton">
+            <summary>
+            The last controller button active
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.HoloboardController.lastTrackpadTouching">
+            <summary>
+            Was Trackpad touching in the previous frame.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.ProcessButtonCallback">
+            <summary>
+            Most primitive Button callback
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.ProcessTouchpad">
+            <summary>
+            Processes the touchpad.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.ResetControllerOrientation">
+            <summary>
+            Resets the controller coordinate system.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.ControllerStateUpdate(System.String)">
+            <summary>
+            This is an internal function.
+            The native plugin communicates with this to relay Controller connection states
+            </summary>
+            <param name="msg">message containing the connection state from the native plugin</param>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.InitiateConnection">
+            <summary>
+            Use this to initiate connection with the Holoboard Controller.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.CloseConnection">
+            <summary>
+            Closes the connection to the controller
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.GetControllerState">
+            <summary>
+            Gets the <see cref="T:TesseractBasic.CONTROLLER_STATE"/>.
+            </summary>
+            <returns>The <see cref="T:TesseractBasic.CONTROLLER_STATE"/>.</returns>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.GetControllerButton">
+            <summary>
+            Gets the pressed <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/>.
+            </summary>
+            <returns>The <see cref="T:TesseractBasic.CONTROLLER_BUTTON"/> being pressed</returns>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.GetTouchPositionOnTouchPad">
+            <summary>
+            Gets the touch position on touch pad.
+            </summary>
+            <returns>The touch position on touch pad.</returns>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.GetIsTouchingPad">
+            <summary>
+            Whether the trackpad is touching
+            </summary>
+            <returns><c>true</c>, if is trackpad is being touched, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TesseractBasic.HoloboardController.GetControllerOrientation">
+            <summary>
+            Gets the controller's current orientation.
+            </summary>
+            <returns>The controller orientation.</returns>
+        </member>
+        <member name="T:TesseractBasic.CONTROLLER_BUTTON">
+            <summary>
+            Controller Button
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_BUTTON.NONE">
+            <summary>
+            No Button is being pressed.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_BUTTON.CLICK_BTN">
+            <summary>
+            Top Button
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_BUTTON.HOME_BTN">
+            <summary>
+            Bottom Button
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_BUTTON.APP_BTN">
+            <summary>
+            Middle Button
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_BUTTON.VOL_DOWN">
+            <summary>
+            Volume Down Button
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_BUTTON.VOL_UP">
+            <summary>
+            Volume Up Button
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.CONTROLLER_STATE">
+            <summary>
+            Controller Connection States
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.UNKNOWN">
+            <summary>
+            Undefined State. Usually at the beginning of the connection.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.BLE_INACTIVE">
+            <summary>
+            Bluetooth adapter of the phone is not active.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.SCAN_ERROR">
+            <summary>
+            Scan was unsuccessful.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.DEVICE_NOT_FOUND">
+            <summary>
+            Holoboard Controller not found by Bluetooth.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.FOUND_CONTROLLER">
+            <summary>
+            Holoboard Controller has been discovered. 
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.CONNECTING">
+            <summary>
+            Pairing in progress.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.RECONNECTING">
+            <summary>
+            Reconnecting in case of timeout or error.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.TROUBLESHOOT">
+            <summary>
+            Controller will have to physically troubleshooted. Refer the SDK documentation for steps.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.CONNECTED">
+            <summary>
+            Holoboard Controller has successfully connected. Data will be transmitted once subscribed.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.SUBSCRIBED">
+            <summary>
+            Smartphone has subscribed for state updates from the controller.
+            Holoboard Controller is now relaying information to the smartphone.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.UNSUBSCRIBED">
+            <summary>
+            Smartphone has unsubscribed for state updates from the controller.
+            Holoboard Controller is not relaying information to the smartphone anymore. Although it is still connected.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.CONTROLLER_STATE.PAIR_REQUEST">
+            <summary>
+            Show a Pair Request
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.ARCamera">
+            <summary>
+            This component is reponsible for camera pose tracking and steroe rendering, along with maintaining system states.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.Instance">
+            <summary>
+            Singleton Instance of ARCamera
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.APIKey">
+            <summary>
+            Developer API Key corresponding to a particular Bundle ID.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.licenseScreen">
+            <summary>
+            The license screen.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.licenseStatus">
+            <summary>
+            The license status text field
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.loadingCircle">
+            <summary>
+            The loading circle in license screen
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.UseThirdPartySDK">
+            <summary>
+            Enable this if using Third Party SDK
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.SDKToUse">
+            <summary>
+            The Third party SDK <see cref="T:ThirdParty.ThirdPartySDK"/> to use.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.ThirdPartyTrackerGameObject">
+            <summary>
+            Attach the GameObject that is tracked by the Third Party SDK to mimic its pose
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.EnableHybridTracking">
+            <summary>
+            Hybrid tracking makes use of the best of both Holoboard and Third Party SDKs wherever possible (Experimental)
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.UseHeadTracking">
+            <summary>
+            Variable to keep track of head tracking
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.Left">
+            <summary>
+            Ability to add custom Left and Right cameras if required
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.Right">
+            <summary>
+            Ability to add custom Left and Right cameras if required
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.eyeSeparation">
+            <summary>
+            Eye Separation or IPD
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.RecenterPoint">
+            <summary>
+            The recenter point.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.RaycastCamera">
+            <summary>
+            Gets the raycast camera. This is the primary camera to be used for Raycasting.
+            </summary>
+            <value>The raycast camera.</value>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.gazePointOnScreen">
+            <summary>
+            The gaze point on screen. Use this with <see cref="F:TesseractBasic.ARCamera.RaycastCamera"/> for Raycasting.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.rayFromGaze">
+            <summary>
+            The ray from gaze. Ray returned when you call
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.mTracker">
+            <summary>
+            Instance of the tracker responsible for giving the camera pose
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.nativeInterface">
+            <summary>
+            Native Plugin Interface for Android and iOS internal plugins
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.configBase">
+            <summary>
+            The config base. Responsible for storing and retrieving all device based constants.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.leftRenderer">
+            <summary>
+            Distortion Shader script
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.rightRenderer">
+            <summary>
+            Distortion Shader script
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.IPDCalibrationActive">
+            <summary>
+            Keeps a track of whether IPD calibration is in progress
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.defaultIPDStep">
+            <summary>
+            Default IPD step when using <see cref="M:TesseractBasic.ARCamera.IncreaseIPD(System.Single)"/> without passing any argument
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.mReticle">
+            <summary>
+            Reticle instance
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.Head">
+            <summary>
+            The Head.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ARCamera.recenteredCorrection">
+            <summary>
+            The recentered correction quaternion
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.LicenseState(System.String)">
+            <summary>
+            Recieves License state updates from native code.
+            </summary>
+            <param name="arguments">Arguments.</param>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.SetupConfiguration">
+            <summary>
+            Sets up the configuration once license is validated
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.SetupCameras">
+            <summary>
+            Setting up the object heirarychy of Left, Right and raycast cameras with appropraite local transformations
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.UpdateCameraParameters">
+            <summary>
+            Updates the camera parameters based on updated configuration
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.Recenter">
+            <summary>
+            Use this function to recenter the head orientation so that it faces the transform set by RecenterPoint
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.SetRecenterPoint(UnityEngine.Transform)">
+            <summary>
+            Use this function to set the recenter Transform
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.EnableHeadTracking">
+            <summary>
+            Enables the head tracking.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.DisableHeadTracking">
+            <summary>
+            Disables the head tracking.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.CloseApplication">
+            <summary>
+            Closes the application.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.SetReticleScript(TesseractBasic.Reticle)">
+            <summary>
+            Sets the reticle script.
+            </summary>
+            <param name="reticle">Reticle.</param>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetIPDNearPlaneDist">
+            <summary>
+            Gets the IPD Near plane distance for showing the IPD Screen
+            </summary>
+            <returns>The IPDN ear plane dist.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetIPDNearPlaneScale">
+            <summary>
+            Gets the IPD Near plane scale for showing the IPD Screen
+            </summary>
+            <returns>The IPDN ear plane scale.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetHeadTrackingState">
+            <summary>
+            Gets the state of the head tracking.
+            </summary>
+            <returns><c>true</c>, if head tracking is ON, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetGazePointOnScreen">
+            <summary>
+            Gets the gaze point on screen that can be used for Raycasting.
+            </summary>
+            <returns>The gaze point on screen.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetRayCastCamera">
+            <summary>
+            Gets the ray cast camera that can be used for Raycasting
+            </summary>
+            <returns>The ray cast camera.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetHeadTransform">
+            <summary>
+            Gets the head transform.
+            </summary>
+            <returns>The head transform.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetHeadGameObject">
+            <summary>
+            Gets the head game object.
+            </summary>
+            <returns>The head game object.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.GetRayFromGaze">
+            <summary>
+            Gets the ray from gaze.
+            </summary>
+            <returns>The ray from gaze.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.StartCalibration">
+            <summary>
+            Use this function to tell the system that you want to initiate IPD calibration. This is only required if you are designing your
+            own custom calibration routine.
+            DO NOT call this if you are using the default <see cref="T:TesseractBasic.IPDCalibration"/> Prefab provided with this package. Instead call <see cref="M:TesseractBasic.IPDCalibration.BeginIPDCalibration"/>.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.IncreaseIPD(System.Single)">
+            <summary>
+            Increase IPD or Eye Separation by increment factor
+            </summary>
+            <param name="increment"> Factor to increase the IPD with. Default is 0.01 if no argument is provided. </param>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.DecreaseIPD(System.Single)">
+            <summary>
+            Decrease IPD or Eye Separation by increment factor
+            </summary>
+            <param name="increment"> Factor to decrease the IPD with. Default is 0.01 if no argument is provided (optional) </param>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.ChangeIPD(System.Single)">
+            <summary>
+            Change the IPD distance based on the change factor
+            </summary>
+            <param name="change">Factor to change the IPD with</param>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.StopIPDCalibration">
+            <summary>
+            Completes the IPD calibration. Use this ONLY if you have a custom calibration UI.
+            You should disable any custom calibration UI that you used with <see cref="M:TesseractBasic.ARCamera.StartCalibration"/> here.
+            DO NOT call this if you are using the default <see cref="T:TesseractBasic.IPDCalibration"/> Prefab provided with this package. Instead call <see cref="M:TesseractBasic.IPDCalibration.EndIPDCalibration"/>.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.DisableThirdPartyPose">
+            <summary>
+            Disables using third party pose if Holoboard Extended Tracking is OFF
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.EnableThirdPartyPose">
+            <summary>
+            Enables using third party pose if Holoboard Extended Tracking is ON
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.IsHybridTrackingEnabled">
+            <summary>
+            Is hybrid tracking enabled.
+            </summary>
+            <returns><c>true</c>, if hybrid tracking enabled was ised, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TesseractBasic.ARCamera.IsThirdPartySDKInUse">
+            <summary>
+            Is any third party SDK in use.
+            </summary>
+            <returns><c>true</c>, if third party SDKI n use was ised, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:TesseractBasic.ARInteractible">
+            <summary>
+            Mid Level Interaction Class. Attach this script to any GameObject with a Collider to relay controller interactions performed while
+            this GameObject is being gazed upon.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnEnter">
+            <summary>
+            Occurs when gaze enters the gameObject this  <see cref="T:TesseractBasic.ARInteractible"/> is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnExit">
+            <summary>
+            Occurs when gaze exits the gameObject this  <see cref="T:TesseractBasic.ARInteractible"/> is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnButtonPressStart">
+            <summary>
+            Occurs when CONTROLLER_BUTTON obj has begun being pressed while gaze is on the gameObject this  <see cref="T:TesseractBasic.ARInteractible"/> is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnButtonPressEnd">
+            <summary>
+            Occurs when CONTROLLER_BUTTON obj has ended being pressed while gaze is on the gameObject this  <see cref="T:TesseractBasic.ARInteractible"/> is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnTrackpadTouchBegin">
+            <summary>
+            Occurs when the touchpad detected a touch while gaze was on the gameobject this script is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnTrackpadTouchEnd">
+            <summary>
+            Occurs when the he touchpad touch has ended while gaze was on the gameobject this script is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnSingleClickUp">
+            <summary>
+            Occurs when CONTROLLER_BUTTON obj is pressed (but not confirmed whether it is a single touch or a double touch) while gaze is on the gameObject this  <see cref="T:TesseractBasic.ARInteractible"/> is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnSingleClickConfirm">
+            <summary>
+            Occurs when CONTROLLER_BUTTON obj is confirmed to have been clicked only once while gaze is on the gameObject this  <see cref="T:TesseractBasic.ARInteractible"/> is attached to.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnDoubleClick">
+            <summary>
+            Occurs when double click.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnDoubleClickCancelled">
+            <summary>
+            Occurs when double click was cancelled by long pressing the second click
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnLongPressStart">
+            <summary>
+            Occurs when long press starts
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnLongPressEnd">
+            <summary>
+            Occurs when long press ends.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnSwipeHorizontal">
+            <summary>
+            Occurs when controller touchpad is swiped vertically.
+            </summary>
+        </member>
+        <member name="E:TesseractBasic.ARInteractible.OnSwipeVertical">
+            <summary>
+            Occurs when controller touchpad is swiped Horizontally.
+            </summary>
+        </member>
+        <member name="P:TesseractBasic.ARInteractible.IsOver">
+            <summary>
+            Gets a value indicating whether gaze is over this <see cref="T:TesseractBasic.ARInteractible"/>.
+            </summary>
+            <value><c>true</c> if gaze is over; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:TesseractBasic.DistortionRenderer">
+            <summary>
+            Internal class responsible for stereo rendering
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.DistortionRenderer.InitializeMaterial">
+            <summary>
+            Initializes the material.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.DistortionRenderer.OnRenderImage(UnityEngine.RenderTexture,UnityEngine.RenderTexture)">
+            <summary>
+            Callback from Unity when a new frame is rendered.
+            </summary>
+            <param name="source">Source texture</param>
+            <param name="destination">Destination texture</param>
+        </member>
+        <member name="M:TesseractBasic.DistortionRenderer.UpdateShaderConstants(TesseractBasic.ConfigBase)">
+            <summary>
+            Updates the shader constants.
+            </summary>
+            <param name="config">Config class to use the data from</param>
+        </member>
+        <member name="M:TesseractBasic.DistortionRenderer.UpdateIPD(System.Single)">
+            <summary>
+            Updates IPD values
+            </summary>
+            <param name="value">Value.</param>
+        </member>
+        <member name="M:TesseractBasic.DistortionRenderer.fixIPDvalue">
+            <summary>
+            Fixs the IPD value.
+            </summary>
+            <returns>The IPD value that has been finalized</returns>
+        </member>
+        <member name="M:TesseractBasic.DistortionRenderer.fixIPDvalueDebug">
+            <summary>
+            Fixs the IPD value.
+            </summary>
+            <returns>The IPD value that has been finalized</returns>
+        </member>
+        <member name="T:TesseractBasic.EyeRaycaster">
+            <summary>
+            Animates the reticle based on whether an object is on the raycast path or not.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.Instance">
+            <summary>
+            The static instance to this class
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.RaycastCamera">
+            <summary>
+            The raycast camera used for the raycaster
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.ray">
+            <summary>
+            The current ray from the camera
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.hit">
+            <summary>
+            The hit from the raycast in current frame
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.gazePoint">
+            <summary>
+            The gaze point in screen coordinates to originate the raycast from
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.arCameraScript">
+            <summary>
+            The <see cref="T:TesseractBasic.ARCamera"/> script reference.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.mReticle">
+            <summary>
+            Reference to <see cref="T:TesseractBasic.Reticle"/>.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.currGO">
+            <summary>
+            The current and previous GameObjects that the ray hit, if any.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.prevGO">
+            <summary>
+            The current and previous GameObjects that the ray hit, if any.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.currInteractible">
+            <summary>
+            The current interactible ray is hitting to
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.EyeRaycaster.prevInteractible">
+            <summary>
+            The previous interactible ray was hitting to
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.EyeRaycaster.OnEnable">
+            <summary>
+            Subscribe to all controller callbacks for relaying those callbacks to the current Interactible
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.EyeRaycaster.OnDisable">
+            <summary>
+            Unsubscribe to all controller callbacks previously subscribed to
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.EyeRaycaster.DeactiveLastInteractible">
+            <summary>
+            Deactives the last interactible.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.EyeRaycaster.UpdateReticle">
+            <summary>
+            Updates the reticle size and shape
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.EyeRaycaster.GetCurrentInteractible">
+            <summary>
+            Gets the current  <see cref="T:TesseractBasic.ARInteractible"/> the user is gazing at.
+            </summary>
+            <returns>The current interactible.</returns>
+        </member>
+        <member name="T:TesseractBasic.IPDCalibration">
+            <summary>
+            IPDC alibration class.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.IPDCalibration.Instance">
+            <summary>
+            Singleton Instance
+            </summary>
+        </member>
+        <member name="P:TesseractBasic.IPDCalibration.calibrationInProgress">
+            <summary>
+            Gets a value indicating whether this <see cref="T:TesseractBasic.IPDCalibration"/> calibration in progress.
+            </summary>
+            <value><c>true</c> if calibration in progress; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="F:TesseractBasic.IPDCalibration.DefaultButtonToStartCalibration">
+            <summary>
+            Default Button for Starting Calibration
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.IPDCalibration.CalibrationUI">
+            <summary>
+            The calibration user interface. 
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.IPDCalibration.arCameraScript">
+            <summary>
+            Instance of <see cref="T:TesseractBasic.ARCamera"/> Script
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.IPDCalibration.holoboardControllerScript">
+            <summary>
+            Instance of <see cref="T:TesseractBasic.HoloboardController"/> Script
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.IPDCalibration.ipdCalibFactor">
+            <summary>
+            Factor to multiply the raw controller values with for accurate effect.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.IPDCalibration.BeginIPDCalibration">
+            <summary>
+            Begins the IPD Calibration.
+            Use this if you provided <see cref="F:TesseractBasic.CONTROLLER_BUTTON.NONE"/> in <see cref="F:TesseractBasic.IPDCalibration.DefaultButtonToStartCalibration"/> and want 
+            to begin calibration based on a custom trigger.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.IPDCalibration.EndIPDCalibration">
+            <summary>
+            Ends the IPD Calibration.
+            Use this if you provided <see cref="F:TesseractBasic.CONTROLLER_BUTTON.NONE"/> in <see cref="F:TesseractBasic.IPDCalibration.DefaultButtonToStartCalibration"/> and want 
+            to end calibration based on a custom trigger.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.IPDCalibration.OnSwipeVertical(System.Single)">
+            <summary>
+            Callback from the controller for vertical swipes.
+            </summary>
+            <param name="factor">Factor to swipe with</param>
+        </member>
+        <member name="M:TesseractBasic.IPDCalibration.OnButtonStart(TesseractBasic.CONTROLLER_BUTTON)">
+            <summary>
+            Callback from the controller for button press start
+            </summary>
+            <param name="button">Button that was pressed.</param>
+        </member>
+        <member name="T:TesseractBasic.Reticle">
+            <summary>
+            Draws a circular reticle in front of any object that the user points at.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.Instance">
+            <summary>
+            Static reference to this class
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.maxReticleDistance">
+            <summary>
+            Maximum distance of the reticle (in meters).
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.defaultReticleDistance">
+            <summary>
+            The default reticle distance ( in meters).
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.reticleSegments">
+            <summary>
+            Number of segments making the reticle circle.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.reticleGrowthSpeed">
+            <summary>
+            Growth speed multiplier for the reticle/
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.ReticleColor">
+            <summary>
+            The color of the reticle.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.ReticleEnabled">
+            <summary>
+            Whether the reticle is enabled or not.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Reticle.RETICLE_MIN_INNER_ANGLE">
+            The constants below are expsed for testing. Minimum inner angle of the reticle (in degrees).
+        </member>
+        <member name="F:TesseractBasic.Reticle.RETICLE_MIN_OUTER_ANGLE">
+            Minimum outer angle of the reticle (in degrees).
+        </member>
+        <member name="F:TesseractBasic.Reticle.RETICLE_GROWTH_ANGLE">
+            Angle at which to expand the reticle when intersecting with an object (in degrees).
+        </member>
+        <member name="F:TesseractBasic.Reticle.RETICLE_DISTANCE_MIN">
+            Minimum distance of the reticle (in meters).
+        </member>
+        <member name="F:TesseractBasic.Reticle.reticleSortingOrder">
+            Sorting order to use for the reticle's renderer.
+            Range values come from https://docs.unity3d.com/ScriptReference/Renderer-sortingOrder.html.
+            Default value 32767 ensures gaze reticle is always rendered on top.
+        </member>
+        <member name="F:TesseractBasic.Reticle.timeCounter">
+            <summary>
+            Counter keeping track on when to hide the reticle after a certain time passes
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Reticle.SetDistance(System.Single)">
+            <summary>
+            Sets the distance of the reticle (in meters).
+            </summary>
+            <param name="dist">Dist.</param>
+        </member>
+        <member name="M:TesseractBasic.Reticle.ShowReticleForSeconds(System.Single,System.Single)">
+            <summary>
+            Shows the reticle for given seconds at the given distance
+            </summary>
+            <param name="seconds">Seconds for which the reticle is visible</param>
+            <param name="distance">Distance at which reticle is visible from the camera (in meters).</param>
+        </member>
+        <member name="M:TesseractBasic.Reticle.UpdatePosition(System.Single)">
+            <summary>
+            Updates the position of the reticle
+            </summary>
+            <param name="distance">New distance of the reticle from the camera (in meters).</param>
+        </member>
+        <member name="M:TesseractBasic.Reticle.PointReticle">
+            <summary>
+            Show Point Reticle
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Reticle.EnableReticle">
+            <summary>
+            Enables the reticle. Any reticle based animation and interactions are only visible if the reticle is enabled.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Reticle.DisableReticle">
+            <summary>
+            Disables the reticle. Any reticle based animation and interactions are only visible if the reticle is enabled.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Reticle.SetReticleSize(System.Boolean)">
+            <summary>
+            Sets the size of the reticle.
+            </summary>
+            <param name="small">If set to <c>true</c> smaller reticle is show otherwise normal size is shown.</param>
+        </member>
+        <member name="M:TesseractBasic.Reticle.SetReticleColor(UnityEngine.Color)">
+            <summary>
+            Sets the color of the reticle.
+            </summary>
+            <param name="color">Color to set the reticle to.</param>
+        </member>
+        <member name="M:TesseractBasic.Reticle.HideReticle">
+            <summary>
+            Hides the reticle unless activated otherwise.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.NativeInterface">
+            <summary>
+            Interface to native plugin
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.NativeInterface.instance">
+            <summary>
+            Singleton instance
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.NativeInterface.deviceName">
+            <summary>
+            The name of the device.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.NativeInterface.gameObjectName">
+            <summary>
+            The name of the game object.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.NativeInterface.configData">
+            <summary>
+            The config data.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TesseractBasic.NativeInterface"/> class.
+            </summary>
+            <param name="goName">GameObject name used for communication between the native plugin and Unity.</param>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface.Init(System.String)">
+            <summary>
+            Initializes the native interface.
+            </summary>
+            <returns>The static instance to the Native Interface</returns>
+            <param name="gameObject">Game object name </param>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface.GetDeviceInfo(System.String)">
+            <summary>
+            Gets the device info.
+            </summary>
+            <returns>The device info.</returns>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface.UpdateConfiguration">
+            <summary>
+            Gets the configuration parameters
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface.CloseApplication">
+            <summary>
+            Closes the application.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface.UpdateSessionStatus(System.Boolean)">
+            <summary>
+            Updates the session status.
+            </summary>
+            <param name="pause">If set to <c>true</c> pause.</param>
+        </member>
+        <member name="T:TesseractBasic.NativeInterface_Android">
+            <summary>
+            Native Android Plugin Interface
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.NativeInterface_Android.deviceInfoclass">
+            <summary>
+            Native Android Java Class for fetching device info.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_Android.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TesseractBasic.NativeInterface_Android"/> class.
+            </summary>
+            <param name="goName">GameObject name used for communicating between native java and Unity</param>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_Android.GetDeviceInfo(System.String)">
+            <summary>
+            Gets the device info.
+            </summary>
+            <returns>The device info.</returns>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_Android.CloseApplication">
+            <summary>
+            Closes the application.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_Android.UpdateConfiguration">
+            <summary>
+            Updates the configuration.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_Android.UpdateSessionStatus(System.Boolean)">
+            <summary>
+            Updates the session status.
+            </summary>
+            <param name="pause">If set to <c>true</c> pause.</param>
+        </member>
+        <member name="T:TesseractBasic.NativeInterface_Editor">
+            <summary>
+            Editor Emulator Plugin
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_Editor.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TesseractBasic.NativeInterface_Editor"/> class.
+            </summary>
+            <param name="gameObject">GameObject name</param>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_Editor.GetDeviceInfo(System.String)">
+            <summary>
+            Gets the device info.
+            </summary>
+            <returns>The device info.</returns>
+            <param name="APIKey">API Key.</param>
+        </member>
+        <member name="T:TesseractBasic.NativeInterface_iOS">
+            <summary>
+            Native Android Plugin Interface
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_iOS.getDeviceName(System.String,System.String,System.String)">
+            <summary>
+            Gets the name of the device.
+            </summary>
+            <returns>The device name.</returns>
+            <param name="goName">GameObject name used for communicating between native java and Unity</param>
+            <param name="key">Key used for authenticating the license</param>
+            <param name="path">persistent data path</param>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_iOS.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TesseractBasic.NativeInterface_iOS"/> class.
+            </summary>
+            <param name="goName">GameObject name used for communicating between native objective-c and Unity</param>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_iOS.GetDeviceInfo(System.String)">
+            <summary>
+            Gets the device info.
+            </summary>
+            <returns>The device info.</returns>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_iOS.UpdateConfiguration">
+            <summary>
+            Updates the configuration data.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.NativeInterface_iOS.UpdateSessionStatus(System.Boolean)">
+            <summary>
+            Updates the session status.
+            </summary>
+            <param name="pause">If set to <c>true</c> pause.</param>
+        </member>
+        <member name="T:TesseractBasic.ThirdParty.ThirdPartySDK">
+            <summary>
+            Third party sdk enum
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.ThirdParty.ThirdPartySDK.Vuforia">
+            <summary>
+            The vuforia SDK
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.TrackerAbstractClass">
+            <summary>
+            This is the abtract class for various tracker types - Basic (Rotational Only); 
+            Advanced (Full 6 DoF tracking); Enterprise (Full 7 DoF tracking) (COMING SOON)
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.TrackerAbstractClass.verticalCorrection">
+            <summary>
+            The vertical correction angle
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.TrackerAbstractClass.currentRotation">
+            <summary>
+            The current rotation.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.TrackerAbstractClass.Init">
+            <summary>
+            Initialize begin condition
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.TrackerAbstractClass.GetCurrentRotation">
+            <summary>
+            Gets the current rotation.
+            </summary>
+            <returns>The current rotation.</returns>
+        </member>
+        <member name="M:TesseractBasic.TrackerAbstractClass.UpdateTranform">
+            <summary>
+            Updates the tranform.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.TrackerThirdPartyAbstractClass">
+            <summary>
+            Tracker third party abstract class.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.TrackerThirdPartyAbstractClass.currentPosition">
+            <summary>
+            The current position.
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.TrackerThirdPartyAbstractClass.thirdPartyTrackerObject">
+            <summary>
+            The third party tracker object to follow
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.TrackerThirdPartyAbstractClass.thirdPartySDKInUse">
+            <summary>
+            Whether the third party SDK is currently in use
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.TrackerThirdPartyAbstractClass.UpdateTranform">
+            <summary>
+            Updates the tranform.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.TrackerThirdPartyAbstractClass.GetCurrentPosition">
+            <summary>
+            Gets the current position.
+            </summary>
+            <returns>The current position.</returns>
+        </member>
+        <member name="M:TesseractBasic.TrackerThirdPartyAbstractClass.ToggleThirdPartyTracking(System.Boolean)">
+            <summary>
+            Toggles the third party tracking.
+            </summary>
+            <param name="active">If set to <c>true</c> Third Party Tracking is ON.</param>
+        </member>
+        <member name="M:TesseractBasic.TrackerThirdPartyAbstractClass.SetConfigClass(TesseractBasic.ConfigBase)">
+            <summary>
+            Sets the config class.
+            </summary>
+            <param name="config">Config class</param>
+        </member>
+        <member name="M:TesseractBasic.TrackerThirdPartyAbstractClass.SetThirdPartyTrackerGameObject(UnityEngine.GameObject)">
+            <summary>
+            Sets the third party tracker game object.
+            </summary>
+            <param name="go">The Third Party Tracker GameObject</param>
+        </member>
+        <member name="M:TesseractBasic.TrackerThirdPartyAbstractClass.IsThirdPartySDKInUse">
+            <summary>
+            Is the third party SDK in use.
+            </summary>
+            <returns><c>true</c>, if third party SDK is in use, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="F:TesseractBasic.Tracker_Basic.gyro">
+            <summary>
+            The reference to Gyroscope sensor class
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Tracker_Basic.gyroRot">
+            <summary>
+            The rotation from the gyro sensor
+            </summary>
+        </member>
+        <member name="F:TesseractBasic.Tracker_Basic.temporary">
+            <summary>
+            The temporary variable to store Vector3
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Basic.Init">
+            <summary>
+            Initialize begin condition
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Basic.UpdateTranform">
+            <summary>
+            Updates the tranform.
+            </summary>
+        </member>
+        <member name="T:TesseractBasic.Tracker_Vuforia">
+            <summary>
+            Tracker class for Vuforia
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Vuforia.Init">
+            <summary>
+            Initialize begin condition
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Vuforia.SetConfigClass(TesseractBasic.ConfigBase)">
+            <summary>
+            Sets the config class.
+            </summary>
+            <param name="config">Config class</param>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Vuforia.UpdateTranform">
+            <summary>
+            Updates the tranform.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Vuforia.GetVuforiaPose">
+            <summary>
+            Gets the vuforia pose.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Vuforia.GetNativeRotationPose">
+            <summary>
+            Gets the native rotation pose.
+            </summary>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Vuforia.ToggleThirdPartyTracking(System.Boolean)">
+            <summary>
+            Toggles the third party tracking.
+            </summary>
+            <param name="active">If set to <c>true</c> Third Party Tracking is ON.</param>
+        </member>
+        <member name="M:TesseractBasic.Tracker_Vuforia.updateOffset(System.Int32,System.Single)">
+            <summary>
+            DEBUG
+            </summary>
+            <param name="index">Index.</param>
+            <param name="val">Value.</param>
+        </member>
+    </members>
+</doc>
